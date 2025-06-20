@@ -1,0 +1,13 @@
+
+  <h1 >Contador: <mark>{{counter}}</mark> </h1>
+  <h1>Contador por Signal: <mark>{{counterSignal()}}</mark> </h1>
+
+  <div class="botones">
+    <button (click)="decreaseByOne(10)" class="btn btn-primary mx-2">-10</button>
+    <button (click)="decreaseByOne(1)" class="btn btn-primary mx-2">-1</button>
+    <button (click)="resetCounter()" class="btn btn-primary mx-2">Reset</button>
+    <button (click)="increaseByOne(1)" class="btn btn-primary mx-2">+1</button>
+    <button (click)="increaseByOne(10)" class="btn btn-primary mx-2">+10</button>
+  </div>
+
+

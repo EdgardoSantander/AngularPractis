@@ -1,0 +1,10 @@
+<nav>
+  <!-- !Importante: routerLinkActiveOptions es para que el routerLinkActive sea unico para esa ruta-->
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">Contador</a>
+  <!-- ! Esto de routerLink es el enlace de href digamoslo asi, nos sirve para enlazar los -->
+  <!-- !componentes, pero debemos anotar ese componente en los imports de nuestro componente al que tengamos ligado-->
+  <a [routerLink]="['/hero']" [routerLinkActive]="'active'">Hero</a>
+  <!-- ? Podemos notar que en ambas etiquetas estamos haciendo lo mismo pero con diferente sintaxis -->
+  <a [routerLink]="'/dragonball'" [routerLinkActive]="'active'">Dragonball</a>
+  <a routerLink="/dragonballsuper" routerLinkActive="active">Dragonball Super</a>
+</nav>

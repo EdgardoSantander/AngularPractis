@@ -1,0 +1,40 @@
+<h1>Dragonball Page</h1>
+<hr />
+
+<section class="row">
+  <div class="col-12 col-sm-6 m-2">
+    <h3 >Agregar: {{nombreTemplate()}}</h3>
+    <input type="text" class="form-control" placeholder="Nombre" [value]="nombreTemplate()"
+     (change)="nombreTemplate.set(txtName.value)" #txtName>
+    <h3>Poder: {{poderTemplate()}}</h3>
+    <input type="number" class="form-control mt-2" placeholder="Poder" [value]="poderTemplate()"
+     (input)="poderTemplate.set(numberPower.valueAsNumber)" #numberPower>
+
+    <button (click)="guardarPersonaje()" class="mt-2 btn btn-primary">Agregar</button>
+
+  </div>
+  <div class="col-12 col-sm-4">
+    <h3 class="mt-2">Listado</h3>
+    <ul>
+      <!-- ! Este es una estructura de control de tipo for y personajes() es la signal del ts document-->
+      @for (personaje of personajes(); track personaje.id) {
+        @if(personaje.poder > 500){
+
+          <li>
+          <span>{{personaje.nombre}} </span>
+          <!-- ? otra forma para remarcar condicionalmente alguno de los objetos que cumpla la condicion-->
+          <strong [class.text-danger]="personaje.poder > 9000"
+                  [class.text-primary]="personaje.poder < 9000"
+                  >({{personaje.poder}})</strong>
+                  <!-- Esta es otra forma de hacer esa condicion pero usando ngClass
+                  [ngClass] = "powerClasses() esta parte seria la logica que se manejaria en el ts"-->
+          </li>
+        }@else {
+          <li>
+            <span>Humano</span>
+          </li>
+        }
+      }
+    </ul>
+  </div>
+</section>

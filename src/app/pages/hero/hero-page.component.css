@@ -1,0 +1,21 @@
+#tarjeta{
+  padding: 10px;
+  background-color: rgb(169, 212, 232);
+  border-radius: 2%;
+  margin: 10px 10px 10px 10px;
+
+}
+
+dd {
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(242, 0, 0, 0.883);
+}
+
+td{
+  font-weight: bold;
+}
+
+h1{
+  font-weight: bold;
+}

@@ -1,0 +1,23 @@
+
+<h3 class="mt-2">Listado</h3>
+    <ul>
+      <!-- ! Este es una estructura de control de tipo for y personajes() es la signal del ts document-->
+      @for (personaje of characters(); track personaje.id) {
+        @if(personaje.poder > 500){
+
+          <li>
+          <span>{{personaje.nombre}} </span>
+          <!-- ? otra forma para remarcar condicionalmente alguno de los objetos que cumpla la condicion-->
+          <strong [class.text-danger]="personaje.poder > 9000"
+                  [class.text-primary]="personaje.poder < 9000"
+                  >({{personaje.poder}})</strong>
+                  <!-- Esta es otra forma de hacer esa condicion pero usando ngClass
+                  [ngClass] = "powerClasses() esta parte seria la logica que se manejaria en el ts"-->
+          </li>
+        }@else {
+          <li>
+            <span>Humano</span>
+          </li>
+        }
+      }
+    </ul>
