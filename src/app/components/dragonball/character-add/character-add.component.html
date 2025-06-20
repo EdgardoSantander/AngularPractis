@@ -1,0 +1,10 @@
+<h3 >Agregar: {{nombreTemplate()}}</h3>
+    <input type="text" class="form-control" placeholder="Nombre" [value]="nombreTemplate()"
+     (change)="nombreTemplate.set(txtName.value)" #txtName>
+
+    <input type="number" class="form-control mt-2" placeholder="Poder" [value]="poderTemplate()"
+     (input)="poderTemplate.set(numberPower.valueAsNumber)" #numberPower>
+
+    <button (click)="guardarPersonaje()" class="mt-2 btn btn-primary">Agregar</button>
+
+  

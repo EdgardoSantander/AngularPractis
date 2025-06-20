@@ -2,20 +2,16 @@
 <hr />
 
 <section class="row">
-  <div class="col-12 col-sm-6 m-2">
-    <h3 >Agregar: {{nombreTemplate()}}</h3>
-    <input type="text" class="form-control" placeholder="Nombre" [value]="nombreTemplate()"
-     (change)="nombreTemplate.set(txtName.value)" #txtName>
 
-    <input type="number" class="form-control mt-2" placeholder="Poder" [value]="poderTemplate()"
-     (input)="poderTemplate.set(numberPower.valueAsNumber)" #numberPower>
-
-    <button (click)="guardarPersonaje()" class="mt-2 btn btn-primary">Agregar</button>
-
+  <div class="col-12 col-sm-4 m-2">
+    <dragonball-character-add
+    (newPersonaje)="agregarPersonaje($event)"/>
   </div>
-  <div class="col-12 col-sm-4">
-    <dragonball-character-list [characters]="personajes()"/>
 
+  <div class="col-12 col-sm-4">
+    <dragonball-character-list
+    [listName] = "nombreLista()"
+    [characters]="personajes()"/>
   </div>
   <div>
   <auto-engine-component [carritos]="carros()"/>
