@@ -7,7 +7,7 @@ import type{Car} from "../../interfaces/car.interface";
   templateUrl:'./autoencendido.component.html'
 })
 export class AutoEngineComponent{
-  saludo = signal('Hola mundo');
+  
 
   carritos= input.required<Car[]>();
 

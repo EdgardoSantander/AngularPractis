@@ -3,17 +3,20 @@
 
 <section class="row">
 
-  <div class="col-12 col-sm-4 m-2">
+  <div class="col-12 col-sm-5 m-2">
+    <!-- ahora vamos a modificar todo porque utilizaremos el service por lo tanto seran las mismas funciones
+     pero extenderan de esa clase aqui viene el ejemplo con los agregar personaje etc.-->
     <dragonball-character-add
-    (newPersonaje)="agregarPersonaje($event)"/>
+    (newPersonaje)="dragonballService.agregarPersonaje($event)"/>
   </div>
-
-  <div class="col-12 col-sm-4">
+    <!-- ! Tomen en cuenta que esto es mucho mas sencillo y solo utilizamos un par de lineas y todo es mas ordenado-->
+  <div class="col-12 col-sm-5">
     <dragonball-character-list
-    [listName] = "nombreLista()"
-    [characters]="personajes()"/>
+    [listName] = "dragonballService.nombreLista()"
+    [characters]="dragonballService.personajes()"/>
   </div>
   <div>
-  <auto-engine-component [carritos]="carros()"/>
+    <auto-engine-component
+    [carritos]="dragonballService.carritos()"/>
   </div>
 </section>
