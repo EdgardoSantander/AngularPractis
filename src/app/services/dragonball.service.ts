@@ -4,9 +4,10 @@ import { Character} from '../interfaces/character.interface';
 
 
 const loadToLocalStorage = (): Character[] => {
-    const characters = localStorage.getItem('characters');
+    //const characters = localStorage.getItem('characters');
+    const chararcterssss = sessionStorage.getItem('characters');
 
-    return characters ? JSON.parse(characters) : [];
+    return chararcterssss ? JSON.parse(chararcterssss) : [];
   }
 //Dependencies injectable
 @Injectable({providedIn: 'root'})
@@ -21,7 +22,9 @@ export class DragonBallService {
   ]);
 
   saveToLocalStorage = effect(() => {
-    localStorage.setItem('characters', JSON.stringify(this.personajes()));
+    //localStorage.setItem('characters', JSON.stringify(this.personajes()));
+    sessionStorage.setItem('characters', JSON.stringify(this.personajes()));
+    console.log(`se agrego personaje a la lista ${this.personajes().length}`);
   })
 
 

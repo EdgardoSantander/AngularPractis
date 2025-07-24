@@ -12,14 +12,16 @@ export class CharacterAddComponent{
   nombreTemplate = signal("");
   poderTemplate = signal(0);
   newPersonaje = output<Character>();
-  id = 1;
+  static id:number = 1;
+
+
 
 
 
   guardarPersonaje(){
 
       let nuevoDato:Character = {
-            id: this.id+1,
+            id: ++CharacterAddComponent.id,
             nombre: this.nombreTemplate(),
             poder: this.poderTemplate()
           }
@@ -27,8 +29,7 @@ export class CharacterAddComponent{
       this.newPersonaje.emit(nuevoDato);
 
 
-      console.log(this.nombreTemplate());
-      console.log(this.poderTemplate());
+
 
       this.resetFields();
   }
